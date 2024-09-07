@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css 22">
+    <title>Imersão Alura</title>
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <title>Minha Página com Fundo</title>
+        <style>
+            body {
+                background-image: url(Akatsuki.jpg);
+                /* Outras propriedades opcionais: */
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+
+                html,
+                body {
+                    margin: 0;
+                    padding: 0;
+                    width: 100%;
+                    height: 100vh;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    background: #000;
+                }
+
+                .glow-on-hover {
+                    width: 220px;
+                    height: 50px;
+                    border: none;
+                    outline: none;
+                    color: #fff;
+                    background: #111;
+                    cursor: pointer;
+                    position: relative;
+                    z-index: 0;
+                    border-radius: 10px;
+                }
+
+                .glow-on-hover:before {
+                    content: '';
+                    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+                    position: absolute;
+                    top: -2px;
+                    left: -2px;
+                    background-size: 400%;
+                    z-index: -1;
+                    filter: blur(5px);
+                    width: calc(100% + 4px);
+                    height: calc(100% + 4px);
+                    animation: glowing 20s linear infinite;
+                    opacity: 0;
+                    transition: opacity .3s ease-in-out;
+                    border-radius: 10px;
+                }
+
+                .glow-on-hover:active {
+                    color: #000
+                }
+
+                .glow-on-hover:active:after {
+                    background: transparent;
+                }
+
+                .glow-on-hover:hover:before {
+                    opacity: 1;
+                }
+
+                .glow-on-hover:after {
+                    z-index: -1;
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: #111;
+                    left: 0;
+                    top: 0;
+                    border-radius: 10px;
+                }
+
+                @keyframes glowing {
+                    0% {
+                        background-position: 0 0;
+                    }
+
+                    50% {
+                        background-position: 400% 0;
+                    }
+
+                    100% {
+                        background-position: 0 0;
+                    }
+                }
+
+            }
+        </style>
+    </head>
+
+<body>
+</body>
+
+</html>
+</head>
+
+<body>
+
+
+    <header>
+        <h1>PERSONAGENS DA AKATSUKI</h1>
+    </header>
+
+
+    <main>
+
+        <section>
+
+            <input type="text" placeholder="Pesquise seu personagem" id="campo-pesquisa">
+
+            <button onclick= "pesquisar()" class="glow-on-hover" type="button">Pesquisar</button>
+
+        </section>
+
+        <section class="resultados-pesquisa" id="resultados-pesquisa">
+
+            <!-- <div class="item-resultado">
+                <h2>Nagato Uzumaki (Pain)</h2>
+                <p class="descrição-meta">Pain, o líder da Akatsuki: uma história de dor e redenção
+                    Pain, na verdade Nagato Uzumaki, é um dos personagens mais complexos e trágicos de Naruto. Após
+                    vivenciar uma infância marcada pela guerra e pela perda, ele desenvolveu uma filosofia distorcida
+                    sobre
+                    a paz, acreditando que somente através da dor seria possível alcançar a tranquilidade. </p>
+                <a href="https://www.legiaodosherois.com.br/lista/pain-historia-naruto-tudo-sobre.html"
+                    target="_blank">Mais
+                    Sobre</a>
+            </div>
+
+            <div class="item-resultado">
+                <h2>Itachi Uchiha</h2>
+                <p class="descrição-meta">Itachi Uchiha: um gênio atormentado. Itachi é um dos membros mais fortes e
+                    complexos da Akatsuki, conhecido por sua inteligência e habilidades ninja. Seus atos, muitas vezes
+                    controversos, o tornaram um personagem intrigante e fascinante.</p>
+                <a href="https://www.legiaodosherois.com.br/2022/itachi-uchiha-historia-poderes-naruto.html"
+                    target="_blank">Mais Sobre</a>
+            </div>
+
+            <div class="item-resultado">
+                <h2>Sasori</h2>
+                <p class="descrição-meta">Sasori: o mestre das marionetes. Sasori era um prodígio na arte da criação de
+                    marionetes, transformando seu corpo em uma arma mortal. Sua história é marcada por traumas e
+                    solidão, o que o levou a buscar imortalidade através da criação.</p>
+                <a href="https://www.legiaodosherois.com.br/lista/sasori-tudo-sobre-naruto.html" target="_blank">Mais
+                    Sobre</a>
+            </div>
+
+            <div class="item-resultado">
+                <h2>Deidara</h2>
+                <p class="descrição-meta">Deidara: o artista explosivo. Deidara era um artista excêntrico que via a arte
+                    na explosão. Suas criações explosivas eram tão belas quanto perigosas, e sua personalidade
+                    irreverente o tornava um dos membros mais memoráveis da Akatsuki.</p>
+                <a href="https://www.legiaodosherois.com.br/lista/deidara-naruto-tudo-sobre.html" target="_blank">Mais
+                    Sobre</a>
+            </div>
+
+            <div class="item-resultado">
+                <h2>Obito Uchiha</h2>
+                <p class="descrição-meta">Obito Uchiha: uma história de traição e redenção. Obito, sob a identidade de
+                    Tobi, manipulou muitos eventos da série. Sua história é marcada por perdas e traumas que o levaram a
+                    um caminho obscuro.</p>
+                <a href="https://www.legiaodosherois.com.br/lista/tobi-naruto-shippuden-tudo-sobre.html"
+                    target="_blank">Mais Sobre</a>
+            </div>  -->
+
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Trick. Todos os direitos reservados. Entre em contato: Rapaz@gmail.com</p>
+    </footer>
+
+    <script src="dados.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
